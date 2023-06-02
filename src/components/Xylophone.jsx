@@ -13,18 +13,18 @@ function Xylophone() {
   return (
     <div id="container">
       <div id="xyloCard">
-        {barAudios.map((ele, idx) => (
+        {barAudios.map(({ audio, letter }, idx) => (
           <div className="barContainer">
             <div
               className="bar"
               id={`bar${idx + 1}`}
               style={{ cursor: "pointer" }}
               onMouseEnter={() => {
-                ele.audio.load();
-                ele.audio.play();
+                audio.load();
+                audio.play();
               }}
             >
-              {ele.letter}
+              {letter}
             </div>
           </div>
         ))}
